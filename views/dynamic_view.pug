@@ -1,0 +1,20 @@
+doctype html 
+html
+    head 
+        title #{user.name}
+        link(rel="stylesheet", href="/css/index.css")
+    body 
+        include ./navbar.pug
+        h1=user.name
+        if(user.name == "hammad" && user.pass == 123)
+            h3(style="color:green") Hello #{user.name}
+        else 
+            h3(style="color:red") Authorization Denied 
+                a(href="/signup") Click here
+        img(src="/images/suit.png", alt="An Image")
+        //- h3
+        //-     . 
+        //-         Url_name #{ url}.
+        //-         this is the best.
+        //-     a(href="http://www.blackboard.com") lol 
+        //- a(href=url) Go to the projects

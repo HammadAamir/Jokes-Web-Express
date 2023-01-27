@@ -1,0 +1,60 @@
+<h1 class="text-center">Jokes</h1>
+<div class="container d-flex justify-content-center">
+    <form action="/" method="get" class="flex-fill mx-5 px-5">
+        <div class="row">
+            <div class="col-md-3">
+                <label id="jokesRangeLabel" for="customRange2" class="form-label">Limit</label>
+            </div>
+            <div class="col-md-7">
+                <input type="range" name="jokes_number" class="form-range" min="0" max="10" id="jokesRange">  
+            </div> 
+        </div>
+        <div class="row d-flex align-items-center">
+            <div class="col-md-3">
+                <label for="languageForm">Languages</label>
+            </div>
+            <div class="col-md-7">
+                <select class="form-control" name="language_select" id="languageForm">
+                    <option value="en">English</option>
+                    <option value="de">German</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-check mt-3">
+        <label class="form-check-label" for="gridCheck">
+            Sensitive Topics
+        </label>
+        <input name="sensitive_topics" class="form-check-input" type="checkbox" id="sensitive">
+        </div>
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-lg"
+                        type="submit">
+                        Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row pt-5">
+{{#each jokes}}
+    {{#even @index}}
+        </div>
+        <div class="row pt-4">
+    {{/even}}
+        <div class="col-sm-4 text-center my-auto">
+            <div class="card card-block d-flex" style="height: 120px;overflow:hidden;">
+                <div class="card-body align-items-center d-flex justify-content-center" style=" 
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;">
+                   {{this.joke}}
+                </div>
+            </div>
+        </div>
+{{/each}}
+</div>
